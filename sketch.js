@@ -22,7 +22,7 @@ function preload() {
   asteroid = loadImage("./Sketches/8.png");
   explosion = loadImage("./Sketches/explosion.png");
   bg = loadImage("./Sketches/Background.png");
-  for (var i = 1; i < 9; i++) {
+  for (var i = 1; i < 8; i++) {
     images[i] = "./Sketches/" + i + ".png";
   }
 }
@@ -81,6 +81,9 @@ function collidesImg() {
     aPoint.x <= pPoint.x + 100 &&
     aPoint.x + 100 >= pPoint.x
   ) {
+    if (current_image >= 8) {
+      current_image = 1;
+    }
     current_image += 1;
     return true;
   } else {
