@@ -1,11 +1,11 @@
 var pPoint = {
   x: Math.floor(Math.random() * 1200),
-  y: Math.floor(Math.random() * 600),
+  y: Math.floor(Math.random() * 800),
 };
 
 function generatePPoint() {
   pPoint.x = Math.floor(Math.random() * 1200);
-  pPoint.y = Math.floor(Math.random() * 600);
+  pPoint.y = Math.floor(Math.random() * 800);
 }
 
 var aPoint = {
@@ -40,8 +40,8 @@ function draw() {
     var m = createVector(aPoint.x - pPoint.x, aPoint.y - pPoint.y);
     m.normalize();
 
-    aPoint.x -= m.x * 5;
-    aPoint.y -= m.y * 5;
+    aPoint.x -= m.x * 21;
+    aPoint.y -= m.y * 20;
     if (collidesImg()) {
       isPressed = false;
       collides = true;
