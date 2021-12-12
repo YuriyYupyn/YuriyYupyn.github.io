@@ -1,11 +1,11 @@
 var pPoint = {
   x: Math.floor(Math.random() * 1200),
-  y: Math.floor(Math.random() * 800),
+  y: Math.floor(Math.random() * 600),
 };
 
 function generatePPoint() {
   pPoint.x = Math.floor(Math.random() * 1200);
-  pPoint.y = Math.floor(Math.random() * 800);
+  pPoint.y = Math.floor(Math.random() * 600);
 }
 
 var aPoint = {
@@ -40,7 +40,7 @@ function draw() {
     var m = createVector(aPoint.x - pPoint.x, aPoint.y - pPoint.y);
     m.normalize();
 
-    aPoint.x -= m.x * 21;
+    aPoint.x -= m.x * 20;
     aPoint.y -= m.y * 20;
     if (collidesImg()) {
       isPressed = false;
@@ -66,6 +66,7 @@ function draw() {
 }
 
 function placePlanet() {
+  console.log(images[current_image]);
   button = createImg(images[current_image]);
   button.size(100, 100);
   button.position(pPoint.x, pPoint.y);
@@ -81,7 +82,7 @@ function collidesImg() {
     aPoint.x <= pPoint.x + 100 &&
     aPoint.x + 100 >= pPoint.x
   ) {
-    if (current_image >= 8) {
+    if (current_image >= 7) {
       current_image = 1;
     }
     current_image += 1;
